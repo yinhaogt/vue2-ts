@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: {
-        app: './src/index.js'
+        app: './src/index.ts'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -23,8 +23,15 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             }
         ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
     }
-
 }
