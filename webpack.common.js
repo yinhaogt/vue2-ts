@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     entry: {
@@ -8,7 +9,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Production'
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     output: {
         filename: '[name].bundle.js',
@@ -22,16 +24,25 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader'
-                ]
+                ],
+                exclude: /node_modules/
             },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.vue$/,
+                use: 'vue-loader',
+                exclude: /node_modules/
             }
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
     }
 }
