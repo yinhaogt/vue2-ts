@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    welcome qing
+    welcome qingss
+    <el-table></el-table>
   </div>
 </template>
 <script lang="ts">
