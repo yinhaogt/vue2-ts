@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import app from './app.vue'
 import './common.scss'
+import './plugins/icon'
 
 import {
   InputNumber,

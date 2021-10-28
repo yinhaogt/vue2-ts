@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     welcome qing
+    <IconPicture></IconPicture>
   </div>
 </template>
 <script lang="ts">
@@ -9,9 +10,7 @@ import { Component } from 'vue-property-decorator'
 
 @Component
 export default class App extends Vue {
-  data() {
-    console.log(111)
-  }
+  private test = 1
 }
 </script>
 <style lang="scss" scoped>
