@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
-    welcome qing
-    <IconPicture></IconPicture>
-  </div>
+  <Editor></Editor>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
+import Editor from './views/editor/index.vue'
 
-@Component
+@Component({
+  components:{
+    Editor
+  }
+})
 export default class App extends Vue {
   private test = 1
 }

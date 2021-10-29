@@ -2,6 +2,8 @@ import Vue from 'vue'
 import app from './app.vue'
 import './common.scss'
 import './plugins/icon'
+import 'ant-design-vue/dist/antd.css'
+import '@icon-park/vue/styles/index.css'
 
 import {
   InputNumber,
