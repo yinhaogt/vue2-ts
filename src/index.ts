@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import app from './app.vue'
+import store from './store/index'
 import './common.scss'
 import './plugins/icon'
 import 'ant-design-vue/dist/antd.css'
@@ -42,5 +43,6 @@ Vue.use(Drawer)
 Vue.use(Spin)
 new Vue({
   // el: '#app',
+  store,
   render: h => h(app)
 }).$mount('#app')
