@@ -32,13 +32,24 @@ module.exports = {
         exclude: /node_modules/
       },
       //sass scss
-      {
-        test: /.sass$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      },
+      // {
+      //   test: /.sass$/,
+      //   use: ['style-loader', 'css-loader', 'sass-loader']
+      // },
       {
         test: /.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: `
+              @import "./src/assets/styles/variable.scss";
+              @import "./src/assets/styles/mixin.scss";`
+            }
+          }
+        ]
       },
       {
         test: /\.tsx?$/,
