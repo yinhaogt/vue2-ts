@@ -1,14 +1,19 @@
 <template>
   <div class="layout-pool">
     <div class="layout-item" v-for="slide in 10" :key="slide">
-      <!-- <ThumbnailSlide class="thumbnail" :slide="slide" :size="180" /> -->
+      <ThumbnailSlide class="thumbnail" :slide="slide" :size="180" />
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
-@Component
+import ThumbnailSlide from '@/views/components/ThumbnailSlide/index.vue'
+@Component({
+  components: {
+    ThumbnailSlide
+  }
+})
 export default class LayoutPool extends Vue {}
 </script>
 <style lang="scss" scoped>

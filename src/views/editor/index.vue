@@ -17,11 +17,7 @@ import Thumbnails from './Thumbnails/index.vue'
     Thumbnails
   }
 })
-export default class Editor extends Vue {
-  created() {
-    console.log(this.$store.state.test)
-  }
-}
+export default class Editor extends Vue {}
 </script>
 <style lang="scss" scoped>
 .pptist-editor {

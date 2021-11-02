@@ -1,7 +1,7 @@
 export interface State {
-  test: string
+  viewportRatio:number
 }
 
 export const state: State = {
-  test: '111'
+  viewportRatio: 0.5625//可视区域比例，默认16:9
 }
